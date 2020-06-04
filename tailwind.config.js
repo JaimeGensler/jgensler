@@ -6,12 +6,14 @@ module.exports = {
                 spacing: 'margin, padding',
                 navlink: 'margin, padding, border-color, color',
             },
+            spacing: {
+                '2px': '2px',
+            },
         },
     },
     variants: {
-        // I can maybe remove the focus ones on these
-        padding: ['responsive', 'hover', 'focus'],
-        margin: ['responsive', 'hover', 'focus'],
+        padding: ['responsive', 'hover'],
+        margin: ['responsive', 'hover'],
     },
     plugins: [],
 };

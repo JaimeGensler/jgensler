@@ -7,8 +7,8 @@ type Props = {
     title?: string;
 };
 
-const shared = 'text-blue-800 duration-150 font-bold hover:text-green-500 mx-4';
-export function InternalNav({ children, href, title }: Props) {
+const shared = 'duration-150 font-bold hover:text-green-500 mx-4';
+export function InternalLink({ children, href, title }: Props) {
     return (
         <li className="h-full flex items-center">
             <Link href={href} passHref>
@@ -22,7 +22,7 @@ export function InternalNav({ children, href, title }: Props) {
         </li>
     );
 }
-export function ExternalNav({ children, href, title }: Props) {
+export function ExternalLink({ children, href, title }: Props) {
     return (
         <li className="h-full flex items-center">
             <a
