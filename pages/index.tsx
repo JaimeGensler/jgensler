@@ -1,4 +1,4 @@
-import { withLayout, withBlogLayout } from '../components/Layout';
+import withHeader from '../components/Header';
 
 function Home() {
     return (
@@ -8,4 +8,4 @@ function Home() {
     );
 }
 
-export default withBlogLayout(Home);
+export default withHeader(Home);

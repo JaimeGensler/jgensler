@@ -8,6 +8,7 @@ export default {
     h4: Heading.H4,
     h5: Heading.H5,
     h6: Heading.H6,
+    hr: Heading.HR,
     p: Text.P,
     a: Text.A,
     code: (props: any) => <p {...props} />,

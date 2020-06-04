@@ -1,6 +1,9 @@
 import { AppProps } from 'next/app';
 import '../tailwind.css';
+import withHeader from '../components/Header';
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
     return <Component {...pageProps} />;
 }
+
+export default withHeader(App);

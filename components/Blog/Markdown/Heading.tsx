@@ -21,3 +21,7 @@ export function H5({ children }: Props) {
 export function H6({ children }: Props) {
     return <h6>{children}</h6>;
 }
+
+export function HR() {
+    return <hr className="border-gray-800 my-4" />;
+}

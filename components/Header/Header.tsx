@@ -5,7 +5,6 @@ import MenuButton from './MenuButton';
 
 export default function Header() {
     const [menuExtended, setMenuExtended] = useState(false);
-
     return (
         <header className="h-16 shadow-md">
             <div className="flex h-12 px-8 space-x-8 bg-white text-blue-800">
