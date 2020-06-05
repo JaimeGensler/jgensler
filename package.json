@@ -18,9 +18,11 @@
         "@mdx-js/runtime": "^1.6.5",
         "@next/mdx": "^9.4.4",
         "autoprefixer": "^9.8.0",
+        "clsx": "^1.1.1",
         "front-matter": "^4.0.2",
         "next": "^9.4.2",
         "next-mdx-enhanced": "^3.0.0",
+        "prism-react-renderer": "^1.1.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-icons": "^3.10.0",
@@ -30,6 +32,7 @@
         "@types/mdx-js__react": "^1.5.2",
         "@types/node": "^14.0.5",
         "@types/react": "^16.9.35",
+        "babel-plugin-import-glob-array": "^0.2.0",
         "typescript": "^3.9.3"
     }
 }

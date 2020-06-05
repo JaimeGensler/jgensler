@@ -1,10 +1,9 @@
-import { MDXProvider } from '@mdx-js/react';
-import components from './Markdown';
-import { CoverPhoto, Footer, Main, Sidebar } from './Layout';
+import Post from './Post';
+import Sidebar from './Sidebar';
 
 interface FrontMatter {
     title: string;
-    date: string;
+    date: Date;
     subtitle: string;
     coverPhoto: string;
     coverPhotoAlt: string;
@@ -12,40 +11,20 @@ interface FrontMatter {
 }
 
 //should I be using <article> ???
-export default function Layout(meta: FrontMatter) {
+export default function Layout(metaData: FrontMatter) {
     return ({ children: content }: any) => {
         return (
-            <Main>
-                <MDXProvider components={components}>
-                    <CoverPhoto
-                        src={meta.coverPhoto}
-                        alt={meta.coverPhotoAlt}
-                        title={meta.coverPhotoTitle}
-                    />
-                    <components.h1>{meta.title}</components.h1>
-                    <p className="text-2xl font-bold italic text-gray-500">
-                        {meta.subtitle}
-                    </p>
-                    <p className="text-right italic mt-4 text-gray-500">
-                        {meta.date}
-                    </p>
+            <>
+                <div className="flex-grow p-2px text-blue-800 bg-green-500 rounded-md bg-split">
+                    <main className="p-12 rounded bg-white text-gray-700">
+                        <Post meta={metaData} content={content} />
+                    </main>
+                </div>
 
-                    <components.hr />
-                    {content}
-                    <components.hr />
-
-                    <div className="test">
-                        <p className="text-center italic text-gray-600">
-                            Want to contact me? Feel free to{' '}
-                            <components.a href="mailto:jaimegensler0@gmail.com">
-                                email me
-                            </components.a>{' '}
-                            with questions, comments, complaints, or
-                            confessions.
-                        </p>
-                    </div>
-                </MDXProvider>
-            </Main>
+                <div>
+                    <Sidebar />
+                </div>
+            </>
         );
     };
 }

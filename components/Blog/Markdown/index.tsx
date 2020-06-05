@@ -1,5 +1,6 @@
 import * as Heading from './Heading';
 import * as Text from './Text';
+import * as Code from './Code';
 
 export default {
     h1: Heading.H1,
@@ -11,6 +12,6 @@ export default {
     hr: Heading.HR,
     p: Text.P,
     a: Text.A,
-    code: (props: any) => <p {...props} />,
-    inlineCode: (props: any) => <p {...props} />,
+    code: Code.Block,
+    inlineCode: Code.Inline,
 };
