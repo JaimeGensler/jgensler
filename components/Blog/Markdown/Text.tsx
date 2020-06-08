@@ -12,10 +12,10 @@ export function A({ children, href }: { children: string; href: string }) {
     );
 }
 export function UL({ children }: { children: string[] }) {
-    return <ul className="list-disc pl-8">{children}</ul>;
+    return <ul className="list-disc px-8">{children}</ul>;
 }
 export function OL({ children }: { children: string[] }) {
-    return <ul className="list-decimal pl-8">{children}</ul>;
+    return <ul className="list-decimal px-8">{children}</ul>;
 }
 export function LI({ children }: { children: string }) {
     return <li>{children}</li>;
