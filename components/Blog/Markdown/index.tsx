@@ -1,6 +1,7 @@
 import * as Heading from './Heading';
 import * as Text from './Text';
 import * as Code from './Code';
+import * as Img from './Img';
 
 export default {
     h1: Heading.H1,
@@ -12,6 +13,10 @@ export default {
     hr: Heading.HR,
     p: Text.P,
     a: Text.A,
+    ul: Text.UL,
+    ol: Text.OL,
+    li: Text.LI,
     code: Code.Block,
     inlineCode: Code.Inline,
+    img: Img.Img,
 };

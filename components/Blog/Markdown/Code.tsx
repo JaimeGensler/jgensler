@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import clsx from 'clsx';
 import oneDarkPro from './theme';
 
 type Props = { children: string; className?: string };
@@ -15,7 +15,7 @@ export function Block({ children, className }: Props) {
             theme={oneDarkPro}
         >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                <pre className={className} style={style}>
+                <pre className={clsx(className, 'p-2')} style={style}>
                     {tokens.map((line, i) => (
                         <div {...getLineProps({ line, key: i })}>
                             {line.map((token, key) => (
@@ -30,5 +30,9 @@ export function Block({ children, className }: Props) {
 }
 
 export function Inline({ children }: Props) {
-    return <span>{children}</span>;
+    return (
+        <span className="bg-gray-300 text-black inline px-1 font-mono">
+            {children}
+        </span>
+    );
 }
