@@ -16,8 +16,8 @@ type MatchResult = [string, string, keyof typeof Month, string, string];
 
 const expr = /([a-z]+), ([a-z]+) ([0-9]{1,2})[snrt][tdh], ([0-9]{4})/i;
 export function getDateParts(dateString: string) {
-    const [, weekday, month, day, year] = dateString.match(expr) as MatchResult;
-    return [weekday, month, day, year];
+    const [, ...data] = dateString.match(expr) as MatchResult;
+    return data;
 }
 export function parseDate(dateString: string) {
     const [, , month, day, year] = dateString.match(expr) as MatchResult;

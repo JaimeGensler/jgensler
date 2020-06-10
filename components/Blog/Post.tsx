@@ -7,7 +7,7 @@ export default function Post({ meta, content }: Props) {
     return (
         <MDXProvider components={components}>
             <img
-                className="h-64 w-full object-cover border-solid border-gray-800 border"
+                className="h-64 w-full object-cover border-solid border-gray-700 border"
                 src={meta.coverPhoto}
                 alt={meta.coverPhotoAlt}
                 title={meta.coverPhotoTitle}
