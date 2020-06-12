@@ -1,5 +1,5 @@
 export function P({ children }: { children: string }) {
-    return <p className="text-indent-8 text-justify">{children}</p>;
+    return <p className="text-indent-8 text-justify my-2">{children}</p>;
 }
 export function A({ children, href }: { children: string; href: string }) {
     return (
@@ -12,10 +12,10 @@ export function A({ children, href }: { children: string; href: string }) {
     );
 }
 export function UL({ children }: { children: string[] }) {
-    return <ul className="list-disc px-8">{children}</ul>;
+    return <ul className="list-disc px-8 space-y-1">{children}</ul>;
 }
 export function OL({ children }: { children: string[] }) {
-    return <ul className="list-decimal px-8">{children}</ul>;
+    return <ul className="list-decimal px-8 space-y-1">{children}</ul>;
 }
 export function LI({ children }: { children: string }) {
     return <li>{children}</li>;

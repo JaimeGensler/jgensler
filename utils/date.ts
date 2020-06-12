@@ -19,9 +19,13 @@ export function getDateParts(dateString: string) {
     const [, ...data] = dateString.match(expr) as MatchResult;
     return data;
 }
-export function parseDate(dateString: string) {
-    const [, , month, day, year] = dateString.match(expr) as MatchResult;
+export function getDateObject(dateString: string) {
+    const [, month, day, year] = getDateParts(dateString);
     return +new Date(parseInt(year), Month[month], parseInt(day), 12);
+}
+export function getDatetime(dateString: string) {
+    const [, month, day, year] = getDateParts(dateString);
+    return `${year}-${Month[month] + 1}-${day}`;
 }
 
 // const suffix = ['th', 'st', 'nd', 'rd'];

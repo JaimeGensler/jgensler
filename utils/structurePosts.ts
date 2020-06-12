@@ -1,4 +1,4 @@
-import parseDate from './parseDate';
+import { getDateObject } from './date';
 type Post = {
     published: boolean;
     date: Date;

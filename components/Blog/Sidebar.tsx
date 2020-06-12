@@ -1,8 +1,8 @@
 import { frontMatter as posts } from '../../pages/blog/*.mdx';
-import { parseDate, getDateParts } from '../../utils/parseDate';
+import { getDateObject, getDateParts } from '../../utils/date';
 
 const sortedPosts = (posts as any[])
-    .sort((a, b) => parseDate(a.date) - parseDate(b.date))
+    .sort((a, b) => getDateObject(a.date) - getDateObject(b.date))
     .reduce((acc, post) => {
         if (!post.published) return acc;
 
