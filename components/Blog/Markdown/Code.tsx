@@ -16,13 +16,15 @@ export function Block({ children, className }: Props) {
         >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <pre className={clsx(className, 'p-2')} style={style}>
-                    {tokens.map((line, i) => (
-                        <div {...getLineProps({ line, key: i })}>
-                            {line.map((token, key) => (
-                                <span {...getTokenProps({ token, key })} />
-                            ))}
-                        </div>
-                    ))}
+                    <code>
+                        {tokens.map((line, i) => (
+                            <div {...getLineProps({ line, key: i })}>
+                                {line.map((token, key) => (
+                                    <span {...getTokenProps({ token, key })} />
+                                ))}
+                            </div>
+                        ))}
+                    </code>
                 </pre>
             )}
         </Highlight>
@@ -31,8 +33,8 @@ export function Block({ children, className }: Props) {
 
 export function Inline({ children }: Props) {
     return (
-        <span className="bg-gray-300 text-black inline px-1 font-mono">
+        <code className="bg-gray-300 text-black inline px-1 font-mono">
             {children}
-        </span>
+        </code>
     );
 }

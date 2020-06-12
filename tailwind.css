@@ -23,3 +23,10 @@ body {
 .text-indent-8 {
     text-indent: 2rem;
 }
+
+.flex-3 {
+    flex: 3;
+}
+.flex-4 {
+    flex: 4;
+}

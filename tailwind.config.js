@@ -3,11 +3,7 @@ module.exports = {
     theme: {
         extend: {
             transitionProperty: {
-                spacing: 'margin, padding',
                 navlink: 'margin, padding, border-color, color',
-            },
-            spacing: {
-                '2px': '2px',
             },
         },
     },
