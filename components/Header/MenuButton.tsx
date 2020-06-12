@@ -1,14 +1,15 @@
-import { AiOutlineMenu } from 'react-icons/ai';
-
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 type Props = {
     isOpen: boolean;
-    onClick: () => void;
+    toggle: () => void;
 };
 
-export default function MenuButton({ isOpen, onClick }: Props) {
+export default function MenuButton({ isOpen, toggle }: Props) {
+    const Icon = isOpen ? AiOutlineClose : AiOutlineMenu;
+
     return (
-        <button onClick={onClick} className="sm:hidden">
-            <AiOutlineMenu className="" />
+        <button onClick={toggle} className="sm:hidden">
+            <Icon />
         </button>
     );
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Nav from './Nav';
-import Media from './Media';
 import MenuButton from './MenuButton';
 
 export default function Header() {
@@ -8,15 +8,19 @@ export default function Header() {
     return (
         <header className="h-16 shadow-md text-blue-800">
             <div className="flex h-12 px-8 space-x-8 bg-white">
-                <h1 className="flex flex-grow sm:flex-grow-0 items-center font-bold text-2xl">
-                    J Gensler
-                </h1>
+                <Link href="/" passHref>
+                    <a
+                        title="Home Page"
+                        className="flex flex-grow sm:flex-grow-0 items-center font-bold text-2xl transition-color duration-150 hover:text-green-500"
+                    >
+                        J Gensler
+                    </a>
+                </Link>
                 <MenuButton
                     isOpen={menuExtended}
-                    onClick={() => setMenuExtended(!menuExtended)}
+                    toggle={() => setMenuExtended(!menuExtended)}
                 />
-                <Nav />
-                <Media />
+                <Nav isOpen={menuExtended} />
             </div>
 
             <div className="h-4 bg-green-500 bg-split" />
