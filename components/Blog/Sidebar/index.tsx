@@ -1,3 +1,4 @@
+//@ts-ignore
 import { frontMatter as posts } from '../../../pages/blog/*.mdx';
 import { getUnaryDate, getDateParts } from '../../../utils/date';
 import CollapsableList from './CollapsableList';

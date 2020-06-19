@@ -15,7 +15,9 @@ export default function Post({ meta, content }: Props) {
                         title={meta.coverPhotoTitle}
                     />
                     <components.h1>{meta.title}</components.h1>
-                    <p className="text-xl text-gray-600">{meta.subtitle}</p>
+                    <p className="text-xl text-gray-600 mb-2">
+                        {meta.subtitle}
+                    </p>
                     <time
                         dateTime={getDatetime(meta.date)}
                         className="block text-right italic text-gray-600"

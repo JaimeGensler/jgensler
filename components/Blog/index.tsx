@@ -17,8 +17,8 @@ export default function Layout(metaData: FrontMatter) {
     return ({ children: content }: any) => {
         return (
             <>
-                <Card className="flex-3">
-                    <main className="p-8">
+                <Card className="flex-3 p-12">
+                    <main>
                         <Post meta={metaData} content={content} />
                     </main>
                 </Card>

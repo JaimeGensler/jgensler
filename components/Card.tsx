@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import clsx from 'clsx';
 
 type Props = {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
 };
 export default function Card({ children, className }: Props) {
