@@ -26,7 +26,10 @@ const sortedPosts = (posts as PostFrontMatter[])
 
         acc[0].props.children[0].props.children.unshift(
             <li key={post.title}>
-                <a href={`/${post.__resourcePath.replace('.mdx', '')}`}>
+                <a
+                    href={`/${post.__resourcePath.replace('.mdx', '')}`}
+                    className="font-medium text-green-500 visited:text-blue-800"
+                >
                     {post.title}
                 </a>
             </li>,
@@ -37,9 +40,8 @@ const sortedPosts = (posts as PostFrontMatter[])
 export default function Sidebar() {
     return (
         <nav>
-            <h1 className="text-xl font-bold">Other Posts</h1>
-            <hr />
-            <ul>{sortedPosts}</ul>
+            <h1 className="text-2xl font-bold">Other Posts</h1>
+            <ul className="ml-2 space-y-2">{sortedPosts}</ul>
         </nav>
     );
 }

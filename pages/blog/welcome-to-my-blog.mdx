@@ -51,3 +51,39 @@ recommendation of one of my brothers, I decided to check out **Tailwind CSS**.
 And holy guacermole, does Tailwind feel gooooood to write. Tailwind also
 provided a better opportunity to practice my raw(ish) CSS chops than a component
 library like AntD would have done, so that's another point for Tailwind.
+
+I decided early on that, since I'm a developer and comfortable writing my posts
+in a code editor and keeping them as part of project files, I don't need a page
+on the site to write my posts. I also didn't feel a real need to allow comment
+submission on the site or to have any display on the post (I'd rather just take
+emails), so I effectively had no need for a database.
+
+My first instinct was to just write my posts as JSON. Any given post might look
+something like this:
+
+```js
+const post = [
+    {
+        type: 'metadata',
+        data: {
+            title: 'Welcome to my blog!'
+            slug: 'welcome-to-my-blog',
+        }
+    },
+    {
+        type: 'paragraph',
+        data: 'This is a paragraph. There are many things that could be written here.'
+    },
+    ...
+];
+```
+
+Then I'd make a `pages/blog/\[slug\].tsx` file, import all the posts, select the
+post array depending on the current route, and map over it and turn it into JSX.
+This would have worked, but it also would have turned out to be incredibly
+tedious. While speaking to my brother again he recommended I use **MDX**. With
+MDX, you can write the post in Markdown (and also import React components into
+the `.mdx` file if necessary), and with some magic and the help of a few other
+packages, have the markdown turned into React components. Same setup and control
+over the display that React gives, significantly more pleasant to actually
+write. With those

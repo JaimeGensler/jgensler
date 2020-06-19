@@ -10,6 +10,7 @@ module.exports = {
     variants: {
         padding: ['responsive', 'hover'],
         margin: ['responsive', 'hover'],
+        textColor: ['responsive', 'hover', 'visited'],
     },
     plugins: [],
 };
