@@ -1,26 +1,45 @@
 import { frontMatter as posts } from '../../../pages/blog/*.mdx';
-import { getDateObject, getDateParts } from '../../../utils/date';
-import List from './List';
+import { getUnaryDate, getDateParts } from '../../../utils/date';
+import CollapsableList from './CollapsableList';
+import { PostFrontMatter } from '../../../types';
 
-const sortedPosts = (posts as any[])
-    .sort((a, b) => getDateObject(a.date) - getDateObject(b.date))
+const sortedPosts = (posts as PostFrontMatter[])
+    .sort((a, b) => getUnaryDate(a.date) - getUnaryDate(b.date))
     .reduce((acc, post) => {
         if (!post.published) return acc;
 
-        const [, month, day, year] = getDateParts(post.date);
-        if (!acc[year]) acc[year] = {};
-        if (!acc[year][month]) acc[year][month] = {};
-        acc[year][month][day] = post;
+        const [, month, , year] = getDateParts(post.date);
+        if (acc[0]?.key !== year) {
+            acc.unshift(
+                <CollapsableList title={year} level={0} key={year}>
+                    {[]}
+                </CollapsableList>,
+            );
+        }
+        if (acc[0].props.children[0]?.key !== month) {
+            acc[0].props.children.unshift(
+                <CollapsableList title={month} level={1} key={month}>
+                    {[]}
+                </CollapsableList>,
+            );
+        }
+
+        acc[0].props.children[0].props.children.unshift(
+            <li key={post.title}>
+                <a href={`/${post.__resourcePath.replace('.mdx', '')}`}>
+                    {post.title}
+                </a>
+            </li>,
+        );
         return acc;
-    }, {} as any);
+    }, [] as JSX.Element[]);
 
 export default function Sidebar() {
     return (
-        <>
-            <h1>Other posts</h1>
-            <ul>
-                <List item={sortedPosts} depth={0} />
-            </ul>
-        </>
+        <nav>
+            <h1 className="text-xl font-bold">Other Posts</h1>
+            <hr />
+            <ul>{sortedPosts}</ul>
+        </nav>
     );
 }

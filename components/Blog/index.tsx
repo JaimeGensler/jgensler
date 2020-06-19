@@ -25,9 +25,7 @@ export default function Layout(metaData: FrontMatter) {
 
                 <div className="flex-1">
                     <Card>
-                        <nav>
-                            <Sidebar />
-                        </nav>
+                        <Sidebar />
                     </Card>
                 </div>
             </>

@@ -3,10 +3,10 @@ import { InternalLink, ExternalLink } from './Link';
 import clsx from 'clsx';
 
 export default function Nav({ isOpen }: { isOpen: boolean }) {
-    const displayType = isOpen ? '' : 'hidden';
+    const displayType = isOpen ? 'flex-col' : 'hidden';
     return (
         <nav className={clsx('list-none sm:flex sm:flex-1', displayType)}>
-            <div className="flex flex-1 px-4 space-x-4">
+            <div className="flex flex-1 px-4 sm:space-x-4 items-center flex-col sm:flex-row">
                 <InternalLink href="/blog" title="My blog">
                     Blog
                 </InternalLink>
