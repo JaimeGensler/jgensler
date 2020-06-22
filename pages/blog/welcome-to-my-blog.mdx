@@ -50,16 +50,17 @@ using Ant Design and Styled Components to get the styling done, but at the
 recommendation of one of my brothers, I decided to check out **Tailwind CSS**.
 And holy guacermole, does Tailwind feel gooooood to write. Tailwind also
 provided a better opportunity to practice my raw(ish) CSS chops than a component
-library like AntD would have done, so that's another point for Tailwind.
+library like AntD would have done, so that's another point in favor of Tailwind.
 
-I decided early on that, since I'm a developer and comfortable writing my posts
-in a code editor and keeping them as part of project files, I don't need a page
-on the site to write my posts. I also didn't feel a real need to allow comment
-submission on the site or to have any display on the post (I'd rather just take
-emails), so I effectively had no need for a database.
+I decided early on that, since I'm writing the site from scratch and am
+comfortable writing my posts in a code editor, I can just keep posts as part of
+the project files and don't need an actual UI on the site to write the posts. I
+also didn't feel a real need to allow comment submission on the site or to have
+any display on the post (I'd rather just take emails), so I had no need for a
+database.
 
-My first instinct was to just write my posts as JSON. Any given post might look
-something like this:
+Given that, my first instinct was to just write my posts as JSON. Any given post
+might look something like this:
 
 ```js
 const post = [
@@ -78,12 +79,21 @@ const post = [
 ];
 ```
 
-Then I'd make a `pages/blog/\[slug\].tsx` file, import all the posts, select the
-post array depending on the current route, and map over it and turn it into JSX.
-This would have worked, but it also would have turned out to be incredibly
-tedious. While speaking to my brother again he recommended I use **MDX**. With
-MDX, you can write the post in Markdown (and also import React components into
-the `.mdx` file if necessary), and with some magic and the help of a few other
-packages, have the markdown turned into React components. Same setup and control
-over the display that React gives, significantly more pleasant to actually
-write. With those
+Then with Next.js, I'd make a `pages/blog/\[slug\].tsx` file, import all the
+posts, select the particular post depending on the current route, and map over
+it and turn it into JSX elements. This probably would have worked fine enough,
+but it also would have turned out to be incredibly tedious. Speaking to my
+brother again, he recommended I use **MDX**. With MDX, you can write the post in
+Markdown (or even import React components into the `.mdx` file if necessary),
+and, with some magic and the help of a few other packages, have the markdown
+turned into React components. Same setup and control over the display that I had
+wanted from React, significantly more pleasant to actually use.
+
+### This is some later part
+
+The part that I actually found the most difficult was getting the sidebar to
+come together. I'm using the babel plugin `import-glob-array` to make life a
+little easier.
+
+So, whenever I write a new post, I just have to write the markdown file, and all
+the imports and navigation is taken care of.
