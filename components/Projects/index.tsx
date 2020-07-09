@@ -1,28 +1,5 @@
 import Project from './Project';
-
-const myProjects = [
-    {
-        title: 'Sudoku Dojo',
-        description:
-            'A web app to play Sudoku, in which I accidentally recreate Redux.',
-        githubLink: 'https://github.com/JaimeGensler/sudoku-dojo',
-        tags: ['TypeScript', 'React', 'Immer'],
-    },
-    {
-        title: 'Sudoku Dojo',
-        description:
-            'A web app to play Sudoku, in which I accidentally recreate Redux.',
-        githubLink: 'https://github.com/JaimeGensler/sudoku-dojo',
-        tags: ['TypeScript', 'React', 'Immer'],
-    },
-    {
-        title: 'Sudoku Dojo',
-        description:
-            'A web app to play Sudoku, in which I accidentally recreate Redux.',
-        githubLink: 'https://github.com/JaimeGensler/sudoku-dojo',
-        tags: ['TypeScript', 'React', 'Immer'],
-    },
-];
+import myProjects from './myProjects.json';
 
 export default function Projects() {
     const projectList = myProjects.map(proj => <Project {...proj} />);

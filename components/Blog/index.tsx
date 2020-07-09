@@ -1,22 +1,18 @@
+import Head from 'next/head';
+
 import Post from './Post';
 import Sidebar from './Sidebar';
 import Card from '../Card';
-import clsx from 'clsx';
+import { PostMetadata } from '../../types';
 
-interface FrontMatter {
-    title: string;
-    date: string;
-    subtitle: string;
-    coverPhoto: string;
-    coverPhotoAlt: string;
-    coverPhotoTitle?: string;
-}
-
-//should I be using <article> ???
-export default function Layout(metaData: FrontMatter) {
+// MDX Layout component is supposed to look like this, don't ask me why.
+export default function Layout(metaData: PostMetadata) {
     return ({ children: content }: any) => {
         return (
             <>
+                <Head>
+                    <title key="page-title">{metaData.title}</title>
+                </Head>
                 <Card className="flex-3 p-12">
                     <main>
                         <Post meta={metaData} content={content} />
