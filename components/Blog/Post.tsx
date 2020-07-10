@@ -15,12 +15,10 @@ export default function Post({ meta, content }: Props) {
                         alt={meta.coverPhotoAltText}
                     />
                     <components.h1>{meta.title}</components.h1>
-                    <p className="text-xl text-gray-700 mb-2">
-                        {meta.subtitle}
-                    </p>
+                    <p className="text-xl mb-2">{meta.subtitle}</p>
                     <time
                         dateTime={getDatetime(meta.date)}
-                        className="block text-right italic text-gray-700"
+                        className="block text-right italic"
                     >
                         {meta.date}
                     </time>
@@ -31,7 +29,7 @@ export default function Post({ meta, content }: Props) {
                 <components.hr />
 
                 <footer className="test">
-                    <address className="text-center italic text-gray-700">
+                    <address className="text-center italic">
                         Want to contact me? Feel free to{' '}
                         <components.a href="mailto:jaimegensler0@gmail.com">
                             email me
