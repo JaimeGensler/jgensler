@@ -21,10 +21,10 @@ export default function Project({
     return (
         <Card>
             <section>
-                <div className="flex text-xl">
-                    <h1 className="flex-1 font-bold">{title}</h1>
+                <div className="flex">
+                    <h1 className="flex-1 font-bold text-xl">{title}</h1>
                     <a href={githubLink}>
-                        <AiOutlineGithub />
+                        <AiOutlineGithub className="text-3xl rounded-full transition-color duration-200 hover:bg-gray-700 hover:text-white" />
                         <span className="sr-only">View on GitHub</span>
                     </a>
                 </div>

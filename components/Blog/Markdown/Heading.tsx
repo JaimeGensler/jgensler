@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 type Props = { children: string };
-const common = 'font-bold text-gray-800 my-2';
+const common = 'font-bold my-2';
 
 export function H1({ children }: Props) {
     return <h1 className={clsx(common, 'text-4xl')}>{children}</h1>;

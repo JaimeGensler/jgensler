@@ -9,7 +9,7 @@ export default function Projects() {
         </CardContainer>
     ));
     return (
-        <main className="flex w-full flex-wrap">
+        <main className="flex w-full justify-between flex-wrap">
             {projectList}
             <CardContainer>
                 <section className="flex items-center justify-center border-dashed border-4 border-gray-600 rounded-md h-full">
