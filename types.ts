@@ -6,7 +6,6 @@ export interface PostMetadata {
     published: boolean;
 
     coverPhoto: string;
-    coverPhotoAlt: string;
-    coverPhotoTitle: string;
+    coverPhotoAltText: string;
     __resourcePath: string;
 }

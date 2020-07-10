@@ -14,3 +14,7 @@ export const sortedPosts = (posts as PostMetadata[]).sort(
 export const mostRecentPostURL = getPostURL(
     sortedPosts[sortedPosts.length - 1].__resourcePath,
 );
+
+export function getPostPageTitle(postTitle: string) {
+    return `${postTitle} - J Gensler`;
+}

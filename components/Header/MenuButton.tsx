@@ -10,6 +10,7 @@ export default function MenuButton({ isOpen, toggle }: Props) {
     return (
         <button onClick={toggle} className="sm:hidden">
             <Icon />
+            <span className="sr-only">Open Menu</span>
         </button>
     );
 }

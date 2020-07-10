@@ -1,8 +1,9 @@
 import { MDXProvider } from '@mdx-js/react';
 import components from './Markdown';
 import { getDatetime } from '../../utils/date';
+import { PostMetadata } from '../../types';
 
-type Props = { meta: any; content: JSX.Element };
+type Props = { meta: PostMetadata; content: JSX.Element };
 export default function Post({ meta, content }: Props) {
     return (
         <MDXProvider components={components}>
@@ -11,16 +12,15 @@ export default function Post({ meta, content }: Props) {
                     <img
                         className="h-64 w-full object-cover border-solid border-gray-600 border"
                         src={meta.coverPhoto}
-                        alt={meta.coverPhotoAlt}
-                        title={meta.coverPhotoTitle}
+                        alt={meta.coverPhotoAltText}
                     />
                     <components.h1>{meta.title}</components.h1>
-                    <p className="text-xl text-gray-600 mb-2">
+                    <p className="text-xl text-gray-700 mb-2">
                         {meta.subtitle}
                     </p>
                     <time
                         dateTime={getDatetime(meta.date)}
-                        className="block text-right italic text-gray-600"
+                        className="block text-right italic text-gray-700"
                     >
                         {meta.date}
                     </time>
@@ -31,7 +31,7 @@ export default function Post({ meta, content }: Props) {
                 <components.hr />
 
                 <footer className="test">
-                    <address className="text-center italic text-gray-600">
+                    <address className="text-center italic text-gray-700">
                         Want to contact me? Feel free to{' '}
                         <components.a href="mailto:jaimegensler0@gmail.com">
                             email me

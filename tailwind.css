@@ -1,5 +1,4 @@
 @tailwind base;
-
 @tailwind components;
 
 @tailwind utilities;
@@ -20,6 +19,9 @@ body {
     );
 }
 
+.text-indent-4 {
+    text-indent: 1rem;
+}
 .text-indent-8 {
     text-indent: 2rem;
 }
@@ -27,6 +29,7 @@ body {
 .flex-3 {
     flex: 3;
 }
-.flex-4 {
-    flex: 4;
+
+.flex-test {
+    flex: 1 0 21%;
 }
