@@ -96,3 +96,21 @@ little easier.
 
 So, whenever I write a new post, I just have to write the markdown file, and all
 the imports and navigation is taken care of.
+
+### Write once and forget
+
+As this header may imply, I wanted to be able to write the code for the blog
+once and forget about it. If changes need to be made in the future, that's fine,
+but for the average post I want to just write the markdown and have the rest
+taken care of for me - I especially don't want a post I've written not to be
+viewable just because I forgot an import somewhere. On the whole, this isn't any
+problem, but it does create one particularly problematic point - a
+post-navigation list.
+
+To take care of the import problem, I'm using the plugin `import-glob-array`.
+I'm also using `Frontmatter`, so I can just
+`import { Frontmatter as posts } from './pages/*.mdx'`
+
+I actually didn't play around with the details of glob imports, but my hunch was
+that the posts would be in the same order as the file tree lists them in
+(alphabetical). For a sidebar, I wanted to import

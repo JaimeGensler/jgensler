@@ -7,9 +7,9 @@ export function getPostURL(resourcePath: string) {
     return `/${resourcePath.replace('.mdx', '')}`;
 }
 
-export const sortedPosts = (posts as PostMetadata[]).sort(
-    (a, b) => getUnaryDate(a.date) - getUnaryDate(b.date),
-);
+export const sortedPosts = (posts as PostMetadata[])
+    .sort((a, b) => getUnaryDate(a.date) - getUnaryDate(b.date))
+    .filter(post => !post.published);
 
 export const mostRecentPostURL = getPostURL(
     sortedPosts[sortedPosts.length - 1].__resourcePath,

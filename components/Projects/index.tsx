@@ -1,27 +1,21 @@
 import Project from './Project';
-import CardContainer from './CardContainer';
 import myProjects from './myProjects.json';
 
 export default function Projects() {
-    const projectList = myProjects.map(proj => (
-        <CardContainer>
-            <Project {...proj} />
-        </CardContainer>
-    ));
+    const projectList = myProjects.map(proj => <Project {...proj} />);
     return (
-        <main className="flex w-full justify-between flex-wrap">
+        <main className="grid grid-auto-rows-1 gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {projectList}
-            <CardContainer>
-                <section className="flex items-center justify-center border-dashed border-4 border-gray-600 rounded-md h-full">
-                    <h1 className="font-bold text-gray-600 text-3xl text-center">
-                        More
-                        <br />
-                        coming
-                        <br />
-                        soon!
-                    </h1>
-                </section>
-            </CardContainer>
+
+            <section className="flex items-center justify-center border-dashed border-4 border-gray-600 rounded-md">
+                <h1 className="font-bold text-gray-600 text-3xl text-center">
+                    More
+                    <br />
+                    coming
+                    <br />
+                    soon!
+                </h1>
+            </section>
         </main>
     );
 }

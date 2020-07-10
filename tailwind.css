@@ -34,10 +34,6 @@ h6 {
     text-indent: 2rem;
 }
 
-.flex-3 {
-    flex: 3;
-}
-
-.flex-test {
-    flex: 1 0 21%;
+.grid-auto-rows-1 {
+    grid-auto-rows: 1fr;
 }

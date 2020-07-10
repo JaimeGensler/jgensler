@@ -20,7 +20,7 @@ export default function Project({
     const tagList = tags.map(text => <Tag text={text} />);
     return (
         <Card>
-            <section>
+            <section className="space-y-2">
                 <div className="flex">
                     <h1 className="flex-1 font-bold text-xl">{title}</h1>
                     <a href={githubLink}>
