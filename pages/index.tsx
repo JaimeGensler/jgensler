@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Home from '../components/Home';
 
 export default function HomePage() {
     return (
@@ -6,9 +7,8 @@ export default function HomePage() {
             <Head>
                 <title key="page-title">Home - J Gensler</title>
             </Head>
-            <div>
-                <p>There's nothing on this page yet.</p>
-            </div>
+
+            <Home />
         </>
     );
 }

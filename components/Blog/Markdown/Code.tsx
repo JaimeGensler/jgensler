@@ -1,6 +1,10 @@
-import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import Highlight, {
+    defaultProps,
+    Language,
+    PrismTheme,
+} from 'prism-react-renderer';
 import clsx from 'clsx';
-import oneDarkPro from './theme';
+import oneDarkPro from './oneDarkProTheme.json';
 
 type Props = { children: string; className?: string };
 export function Block({ children, className }: Props) {
@@ -12,7 +16,7 @@ export function Block({ children, className }: Props) {
             {...defaultProps}
             code={children.trim()}
             language={lang as Language}
-            theme={oneDarkPro}
+            theme={oneDarkPro as PrismTheme}
         >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <pre className={clsx(className, 'p-2')} style={style}>

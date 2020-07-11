@@ -17,17 +17,15 @@ export default function Layout(metaData: PostMetadata) {
                     </title>
                 </Head>
 
-                <Card className="flex-3 p-12">
+                <Card className="p-8 w-2/3">
                     <main>
                         <Post meta={metaData} content={content} />
                     </main>
                 </Card>
 
-                <div className="flex-1">
-                    <Card>
-                        <Sidebar />
-                    </Card>
-                </div>
+                <Card className="p-8 w-1/3">
+                    <Sidebar />
+                </Card>
             </>
         );
     };

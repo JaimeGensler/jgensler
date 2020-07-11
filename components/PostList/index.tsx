@@ -1,10 +1,8 @@
-import { sortedPosts, getPostURL } from '../../../utils/post';
-import { getDateParts } from '../../../utils/date';
+import { sortedPosts, getPostURL } from '../../utils/post';
+import { getDateParts } from '../../utils/date';
 import CollapsableList from './CollapsableList';
 
 const postLinks = sortedPosts.reduce((acc, post) => {
-    if (!post.published) return acc;
-
     const [, month, , year] = getDateParts(post.date);
     if (acc[0]?.key !== year) {
         acc.unshift(
@@ -14,7 +12,7 @@ const postLinks = sortedPosts.reduce((acc, post) => {
         );
     }
     if (acc[0].props.children[0]?.key !== month) {
-        (acc[0].props.children as JSX.Element[]).unshift(
+        acc[0].props.children.unshift(
             <CollapsableList title={month} level={1} key={month}>
                 {[]}
             </CollapsableList>,
@@ -35,5 +33,9 @@ const postLinks = sortedPosts.reduce((acc, post) => {
 }, [] as JSX.Element[]);
 
 export default function PostList() {
-    return <ul className="space-y-2">{postLinks}</ul>;
+    return (
+        <nav>
+            <ol className="space-y-2">{postLinks}</ol>
+        </nav>
+    );
 }

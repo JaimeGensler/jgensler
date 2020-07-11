@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 type Props = { children: string };
-const common = 'font-bold my-2';
+const common = 'font-bold';
 
 export function H1({ children }: Props) {
     return <h1 className={clsx(common, 'text-4xl')}>{children}</h1>;
@@ -23,5 +23,5 @@ export function H6({ children }: Props) {
 }
 
 export function HR() {
-    return <hr className="border-gray-600 my-6" />;
+    return <hr className="border-gray-600 my-4" />;
 }
