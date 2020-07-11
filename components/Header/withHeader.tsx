@@ -6,7 +6,7 @@ export default function withHeader(Page: (props: any) => JSX.Element) {
             <>
                 <Header />
 
-                <div className="container mx-auto text-gray-700 my-8 flex space-x-8">
+                <div className="container flex mx-auto my-8 text-gray-700">
                     <Page {...props} />
                 </div>
             </>

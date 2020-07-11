@@ -9,7 +9,7 @@ export default function BlogPosts({ className }: Props) {
     return (
         <Card className={className}>
             <section className="space-y-2">
-                <SectionHeader side="right">Blog Posts</SectionHeader>
+                <SectionHeader>Blog Posts</SectionHeader>
                 <PostPreview />
                 <PostList />
             </section>

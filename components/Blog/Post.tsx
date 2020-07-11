@@ -25,7 +25,7 @@ export default function Post({ meta, content }: Props) {
                 </header>
 
                 <components.hr />
-                <div className="my-2">{content}</div>
+                <div className="space-y-2">{content}</div>
                 <components.hr />
 
                 <footer className="test">

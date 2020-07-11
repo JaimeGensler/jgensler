@@ -23,5 +23,5 @@ export function H6({ children }: Props) {
 }
 
 export function HR() {
-    return <hr className="border-gray-600 my-4" />;
+    return <hr className="border-gray-500 my-4" />;
 }

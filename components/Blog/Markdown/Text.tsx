@@ -1,5 +1,5 @@
 export function P({ children }: { children: string }) {
-    return <p className="text-indent-4 my-2">{children}</p>;
+    return <p className="text-indent-4">{children}</p>;
 }
 export function A({ children, href }: { children: string; href: string }) {
     return (
